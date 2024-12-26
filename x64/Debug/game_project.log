@@ -1,3 +1,0 @@
-﻿  sound.cpp
-C:\DxLib_VC\プロジェクトに追加すべきファイル_VC用\DxLib.h(3964,1): warning C4819: ファイルは、現在のコード ページ (932) で表示できない文字を含んでいます。データの損失を防ぐために、ファイルを Unicode 形式で保存してください。
-  game_project.vcxproj -> C:\Users\multi\OneDrive\デスクトップ\game_project\x64\Debug\game_project.exe
