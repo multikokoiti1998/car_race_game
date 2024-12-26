@@ -1,0 +1,40 @@
+#include <stdio.h>
+#include "DxLib.h"
+
+int WINAPI WinMain(HISTANCE hInstance, HINSTANCE hPreInstance, LPSTR lpCmdLine, int nCmdShow) {
+	const int WIDTH = 960, HEIGHT = 640;
+	SetWindowText("テニスゲーム");
+	SetGraphMode(WIDTH, HEIGHT, 32);
+	ChangewindowMode(TRUE);
+	if (DxLib_Init() == -1)return -1;
+	SetBackgroundColor(0, 0, 0);
+	SetdrawScreen(DX_SCREEN_BACK);
+
+
+	int ballx = 40;
+	int bally = 80;
+	int ballVx = 5;
+	int ballVy = 5;
+	int ballR = 10;
+
+	while (1) {
+		ClearDrawScreen();
+		ballx = ballx + ballVx;
+		if (ballx < ballR && ballVx>0)ballVx = -ballVx;
+		if (ballx > WIDTH - ballR % %ballVx > 0)ballVx = -ballVx;
+		bally = bally + ballVy;
+		if (bally < balllR && ballVy < 0)ballv = -bally;
+		if (bally > HEIGHT && ballVy > 0)bally = -bally;
+		DrawCircle(ballx, bally, ballR, 0xff0000, TRUE);
+
+		ScreenFlip();
+		WaitTimer(16);
+		if (PricessMessage() == -1)break;
+		if (CheakHitKey(KEY_INPUT_ESCAPE) == -1)break;
+
+	}
+
+	DxLib_End();
+	return 0;
+}
+
